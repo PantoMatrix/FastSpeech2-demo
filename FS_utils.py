@@ -72,7 +72,7 @@ class FS2:
             config = json.load(f)
         config = hifigan.AttrDict(config)
         self.vocoder = hifigan.Generator(config)
-        ckpt = torch.load("hifigan/generator_universal.pth.tar")
+        ckpt = torch.load("generator_universal.pth.tar")
         self.vocoder.load_state_dict(ckpt["generator"])
         self.vocoder.eval()
         self.vocoder.remove_weight_norm()

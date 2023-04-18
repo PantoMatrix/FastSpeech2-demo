@@ -62,7 +62,7 @@ class FS2:
         
     def model_init(self):
         self.model = FastSpeech2(self.preprocess_config, self.model_config).to(self.device)
-        ckpt = torch.load("150000.pth.tar")
+        ckpt = torch.load("1200000.pth.tar")
         self.model.load_state_dict(ckpt["model"], strict=True)
         self.model.eval()
         self.model.requires_grad_ = False
